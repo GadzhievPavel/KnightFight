@@ -10,17 +10,32 @@ public class Knight implements IArmor, IWeapon {
     float money;
 
     Inventory[] inventories;
+    int count;
 
     public Knight(String name, int health, float money){
         this.health = health;
         this.money = money;
         this.name = name;
 
-        //inventories
+        inventories = new Inventory[6];
+        count = 0;
     }
 
+    public void buy(Inventory inventory){
+        if(count<inventories.length){
+            if(money>= inventory.getPrice()){
+                inventories[count++] = inventory;
+                this.money-=inventory.getPrice();
+            }else{
+                throw new MyException();
+            }
+        }else{
+            throw new BagException();
+        }
+    }
     @Override
     public int defend(int damage) {
+
         return 0;
     }
 

@@ -1,26 +1,26 @@
 package org.example;
 
+import org.example.knight.BagException;
 import org.example.knight.Knight;
+import org.example.knight.MyException;
+import org.example.knight.inventory.weapon.Sword;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        //Knight knight = new Knight();
-        int[] arr = new int[]{1,23,56};
-        try{
-            Integer i1 = null;
-            i1++;
-            for (int i =0; i<5;i++){
-                System.out.println(arr[i]);
+        Sword sword = new Sword("Ласточка",100,5);
+        Knight knight = new Knight("I",50,100);
+        try {
+            while (true){
+                knight.buy(sword);
             }
-
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Вышли за предел" + e.getMessage());
-        }catch (NullPointerException e){
-            System.out.println("object not init");
+        }catch (MyException myException){
+            System.out.println("Деньги кончились");
+        }catch (BagException bagException){
+            System.out.println("Место кончилось");
         }finally {
-            System.out.println("bye");
+            System.out.println("Экипировка завершена");
         }
-
     }
+
 }
