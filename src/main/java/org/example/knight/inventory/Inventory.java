@@ -11,6 +11,9 @@ public abstract class Inventory {
         return price;
     }
 
+    public void setPrice(float price){
+        this.price = price;
+    }
     @Override
     public String toString() {
         return String.valueOf(price);
