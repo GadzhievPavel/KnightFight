@@ -57,19 +57,23 @@ public class Shop {
 //    }
 
     public Inventory getProduct(int i){
-        if(inv.get(i)!=null){
-            Armor armor = new Armor(0,0);
-            Inventory inventory = new InventoryBuilder(inv.get(i)).clone();
-            //inventories[i]=null;
-            //todo
+        try{
+            Inventory inventory = inv.get(i);
             return inventory;
+        }catch (Exception e){
+            throw new RuntimeException("Нет такого товара");
         }
-        throw new RuntimeException("Нет такого товара");
     }
 
+    public void verificationBuy(boolean b, int index){
+        if(b){
+            inv.remove(index);
+        }
+    }
     public void printProducts(){
+        int i = 0;
         for (Inventory inventory:inv) {
-            System.out.println(inventory.toString());
+            System.out.println(i+++" "+inventory.toString());
         }
     }
 }

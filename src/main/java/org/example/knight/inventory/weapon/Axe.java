@@ -2,7 +2,7 @@ package org.example.knight.inventory.weapon;
 
 import org.example.knight.inventory.Inventory;
 
-public class Axe extends Weapon implements IWeapon {
+public class Axe extends Weapon {
 
     public Axe(){
         super(0,0);
@@ -17,6 +17,7 @@ public class Axe extends Weapon implements IWeapon {
 
     @Override
     public int damage() {
+        System.out.println("Урон топора "+ damage);
         return damage;
     }
 

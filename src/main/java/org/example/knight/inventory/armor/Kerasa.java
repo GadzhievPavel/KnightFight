@@ -21,6 +21,11 @@ public class Kerasa extends Armor implements IArmor{
     }
 
     @Override
+    public int getDefend() {
+        return this.armor;
+    }
+
+    @Override
     public String toString() {
         return "Доспех "+super.toString();
     }

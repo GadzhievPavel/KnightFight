@@ -6,7 +6,7 @@ import org.example.knight.inventory.Inventory;
 
 import java.util.Random;
 
-public class Weapon extends Inventory implements ICalcDamage, ICalcPrice {
+public class Weapon extends Inventory implements ICalcDamage, ICalcPrice, IWeapon {
     int damage;
 
     public Weapon(int damage, float price) {
@@ -32,5 +32,10 @@ public class Weapon extends Inventory implements ICalcDamage, ICalcPrice {
     public void calcPrice() {
         Random random = new Random();
         setPrice(random.nextInt(20)+10);
+    }
+
+    @Override
+    public int damage() {
+        return damage;
     }
 }

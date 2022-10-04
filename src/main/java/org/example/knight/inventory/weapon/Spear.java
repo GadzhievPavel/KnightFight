@@ -16,6 +16,7 @@ public class Spear extends Weapon implements IWeapon{
 
     @Override
     public int damage() {
+        System.out.println("Урон копья "+ damage);
         return damage;
     }
 

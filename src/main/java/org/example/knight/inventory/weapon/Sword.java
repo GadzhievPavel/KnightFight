@@ -21,6 +21,7 @@ public class Sword extends Weapon implements IWeapon{
 
     @Override
     public int damage() {
+        System.out.println("Урон меча "+ damage);
         return damage;
     }
 
