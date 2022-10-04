@@ -1,6 +1,6 @@
 package org.example.knight.inventory;
 
-public abstract class Inventory {
+public abstract class Inventory implements Cloneable {
    float price;
 
     public Inventory(float price){
@@ -18,4 +18,5 @@ public abstract class Inventory {
     public String toString() {
         return String.valueOf(price);
     }
+
 }
